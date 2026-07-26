@@ -18,6 +18,12 @@ The website is also used to publish informational content and practice SEO-relat
 
 ---
 
+## Project Status
+
+This blogging website is an ongoing personal project built to strengthen my web development skills through practical implementation. I am continuously adding new features, improving responsiveness, refining the user interface, optimizing performance, and enhancing the overall user experience.
+
+---
+
 ## Features
 
 - Responsive Design
