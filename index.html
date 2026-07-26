@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Ledger — Notes on Work & Wellbeing</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --paper: #f7f4ee;
+        --ink: #191714;
+        --ink-soft: #5b564d;
+        --navy: #1d3557;
+        --mustard: #e3a93a;
+        --line: #e4dfd3;
+        --card: #ffffff;
+      }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        background: var(--paper);
+        color: var(--ink);
+        font-family: "Inter", sans-serif;
+        line-height: 1.55;
+      }
+      h1,
+      h2,
+      h3,
+      .serif {
+        font-family: "Fraunces", serif;
+      }
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      /* Header */
+      header {
+        border-bottom: 1px solid var(--line);
+        position: sticky;
+        top: 0;
+        background: var(--paper);
+        z-index: 10;
+      }
+      .nav {
+        max-width: 1080px;
+        margin: 0 auto;
+        padding: 22px 24px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      .brand {
+        font-family: "Fraunces", serif;
+        font-weight: 700;
+        font-size: 22px;
+        letter-spacing: -0.02em;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+      .brand span {
+        display: inline-block;
+        width: 9px;
+        height: 9px;
+        border-radius: 50%;
+        background: var(--mustard);
+      }
+      .nav-links {
+        display: flex;
+        gap: 28px;
+        font-size: 14px;
+        color: var(--ink-soft);
+      }
+      .nav-links a:hover {
+        color: var(--navy);
+      }
+
+      /* Hero */
+      .hero {
+        max-width: 1080px;
+        margin: 0 auto;
+        padding: 64px 24px 48px;
+        border-bottom: 1px solid var(--line);
+      }
+      .eyebrow {
+        font-size: 12px;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--navy);
+        font-weight: 600;
+        margin-bottom: 14px;
+      }
+      .hero h1 {
+        font-size: 44px;
+        font-weight: 600;
+        letter-spacing: -0.02em;
+        max-width: 640px;
+      }
+      .hero p {
+        color: var(--ink-soft);
+        margin-top: 14px;
+        max-width: 520px;
+        font-size: 16px;
+      }
+
+      /* Layout */
+      main {
+        max-width: 1080px;
+        margin: 0 auto;
+        padding: 48px 24px 80px;
+        display: flex;
+        gap: 56px;
+      }
+      .feed {
+        flex: 1;
+        min-width: 0;
+      }
+      .sidebar {
+        width: 260px;
+        flex-shrink: 0;
+      }
+
+      .post {
+        display: flex;
+        gap: 28px;
+        padding: 28px 0;
+        border-bottom: 1px solid var(--line);
+      }
+      .post:first-child {
+        padding-top: 0;
+      }
+      .post-index {
+        font-family: "Fraunces", serif;
+        font-size: 14px;
+        color: var(--mustard);
+        font-weight: 600;
+        flex-shrink: 0;
+        width: 28px;
+        padding-top: 4px;
+      }
+      .post-body {
+        flex: 1;
+      }
+      .post-meta {
+        font-size: 13px;
+        color: var(--ink-soft);
+        margin-bottom: 8px;
+      }
+      .post-meta .dot {
+        margin: 0 6px;
+      }
+      .post h2 {
+        font-size: 23px;
+        font-weight: 600;
+        letter-spacing: -0.01em;
+        margin-bottom: 8px;
+      }
+      .post:hover h2 {
+        color: var(--navy);
+      }
+      .post p.excerpt {
+        color: var(--ink-soft);
+        font-size: 15px;
+        max-width: 560px;
+      }
+      .post-tag {
+        display: inline-block;
+        margin-top: 14px;
+        font-size: 12px;
+        padding: 4px 12px;
+        border: 1px solid var(--line);
+        border-radius: 20px;
+        color: var(--ink-soft);
+      }
+      .post-thumb {
+        width: 96px;
+        height: 96px;
+        border-radius: 6px;
+        flex-shrink: 0;
+        background: linear-gradient(135deg, var(--navy), #3a5a8c);
+      }
+      .post-thumb.alt {
+        background: linear-gradient(135deg, var(--mustard), #c9832a);
+      }
+      .post-thumb.alt2 {
+        background: linear-gradient(135deg, #5b564d, #8a8375);
+      }
+
+      /* Sidebar */
+      .side-block {
+        margin-bottom: 40px;
+      }
+      .side-title {
+        font-size: 12px;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: var(--ink-soft);
+        font-weight: 600;
+        margin-bottom: 16px;
+      }
+      .topics {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+      .topics a {
+        font-size: 13px;
+        padding: 7px 14px;
+        border: 1px solid var(--line);
+        border-radius: 20px;
+        color: var(--ink);
+      }
+      .topics a:hover {
+        border-color: var(--navy);
+        color: var(--navy);
+      }
+      .about-card {
+        background: var(--card);
+        border: 1px solid var(--line);
+        border-radius: 10px;
+        padding: 22px;
+        font-size: 14px;
+        color: var(--ink-soft);
+      }
+      .about-card strong {
+        display: block;
+        color: var(--ink);
+        font-family: "Fraunces", serif;
+        font-size: 16px;
+        margin-bottom: 8px;
+      }
+
+      footer {
+        border-top: 1px solid var(--line);
+        padding: 28px 24px;
+        text-align: center;
+        font-size: 13px;
+        color: var(--ink-soft);
+      }
+
+      @media (max-width: 760px) {
+        main {
+          flex-direction: column;
+        }
+        .sidebar {
+          width: 100%;
+        }
+        .hero h1 {
+          font-size: 32px;
+        }
+        .post {
+          gap: 16px;
+        }
+        .post-thumb {
+          width: 72px;
+          height: 72px;
+        }
+        .nav-links {
+          display: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="nav">
+        <div class="brand"><span></span>The Ledger</div>
+        <div class="nav-links">
+          <a href="#">All posts</a>
+          <a href="#">Guides</a>
+          <a href="#">Company</a>
+        </div>
+      </div>
+    </header>
+
+    <section class="hero">
+      <div class="eyebrow">The Ledger — Journal</div>
+      <h1>Notes on building calmer, healthier workplaces.</h1>
+      <p>
+        Field notes, research, and practical guides from our team — on benefits,
+        wellbeing, and the small decisions that shape how people work.
+      </p>
+    </section>
+
+    <main>
+      <section class="feed">
+        <a class="post" href="./Blogs/blog1-title-slug.html">
+          <div class="post-index">01</div>
+          <div class="post-body">
+            <div class="post-meta">
+              Sarah Jenkins <span class="dot">&middot;</span> July 14, 2026
+              <span class="dot">&middot;</span> 6 min read
+            </div>
+            <h2>The Silent Evolution of Local Web Infrastructure</h2>
+            <p class="excerpt">
+              Why modern engineering teams are trading bulky monolithic
+              architectures for lean, edge-first deployment pipelines.
+            </p>
+            <span class="post-tag">Engineering</span>
+          </div>
+          <div class="post-thumb"></div>
+        </a>
+
+        <a
+          class="post"
+          href="./Blogs/why-upcoming-townships-in-bangalore-are-shaping-modern-urban-living.html"
+        >
+          <div class="post-index">02</div>
+          <div class="post-body">
+            <div class="post-meta">
+              Abhinav Sinha <span class="dot">&middot;</span> July 22, 2026
+              <span class="dot">&middot;</span> 1 min read
+            </div>
+            <h2>
+              Why Upcoming Townships in Bangalore Are Shaping Modern Urban
+              Living
+            </h2>
+            <p class="excerpt">
+              Discover key factors to evaluate upcoming Bangalore townships for
+              smarter property decisions, long-term value, and modern living.
+            </p>
+            <span class="post-tag">Real Estate</span>
+          </div>
+          <div class="post-thumb alt"></div>
+        </a>
+
+        <a
+          class="post"
+          href="./Blogs/how-to-choose-the-right-real-estate-builder-in-bangalore-for-long-term-value.html"
+        >
+          <div class="post-index">03</div>
+          <div class="post-body">
+            <div class="post-meta">
+              Abhinav SInha <span class="dot">&middot;</span> July 23, 2026
+              <span class="dot">&middot;</span> 1 min read
+            </div>
+            <h2>
+              How to Choose the Right Real Estate Builder in Bangalore for
+              Long-Term Value
+            </h2>
+            <p class="excerpt">
+              Discover essential tips for choosing a reliable real estate
+              builder in Bangalore with confidence and clarity.
+            </p>
+            <span class="post-tag">Real Estate</span>
+          </div>
+          <div class="post-thumb alt2"></div>
+        </a>
+      </section>
+
+      <aside class="sidebar">
+        <div class="side-block">
+          <div class="side-title">Topics</div>
+          <div class="topics">
+            <a href="#">Engineering</a>
+            <a href="#">Real Estate</a>
+            <a href="#">Healthcare</a>
+            <a href="#">Education</a>
+            <a href="#">Jewellery & Fashion</a>
+          </div>
+        </div>
+        <div class="side-block">
+          <div class="side-title">About</div>
+          <div class="about-card">
+            <strong>The Ledger</strong>
+            Essays and guides on work, wellbeing, and building teams people
+            actually want to be part of.
+          </div>
+        </div>
+      </aside>
+    </main>
+
+    <footer>&copy; 2026 The Ledger. All rights reserved.</footer>
+  </body>
+</html>
