@@ -6,7 +6,7 @@
 
 # Blogging Website
 
-A responsive blogging website built as a personal web development project to practice frontend development, website structure, content management, and SEO fundamentals.
+This project was built to strengthen my web development skills while implementing practical SEO techniques, including metadata optimization, content organization, internal linking, and publishing workflows. It also serves as a platform for publishing informational content as part of my learning and experimentation.
 
 ---
 
