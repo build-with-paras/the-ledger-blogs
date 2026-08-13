@@ -28,7 +28,7 @@ JavaScript for interactivity, with no framework overhead.
 ## Features
 
 - Dynamic post feed rendered from a single JavaScript data source
-  (`js/posts.js`), keeping post content and layout logic cleanly separated
+  (JS/posts.js`), keeping post content and layout logic cleanly separated
 - Automatic reading-time calculation based on actual article word count
 - Client-side topic filtering from the sidebar navigation
 - Responsive mobile navigation with a dedicated menu toggle
@@ -55,13 +55,13 @@ JavaScript for interactivity, with no framework overhead.
 ## Project Structure
 
 the-ledger-blogs/
-├── Blog Images/ # Featured images used in individual posts
-├── Blogs/ # Individual blog post pages
-├── js/
-│ ├── posts.js # Post data source
-│ └── main.js # Rendering, filtering, and navigation logic
-├── index.html # Homepage feed and layout
-└── README.md
+├── Blog Images/ # Featured images used in individual posts</br>
+├── Blogs/ # Individual blog post pages</br>
+├── JS/</br>
+│ ├── posts.js # Post data source</br>
+│ └── main.js # Rendering, filtering, and navigation logic</br>
+├── index.html # Homepage feed and layout</br>
+└── README.md</br>
 
 ---
 

@@ -8,7 +8,7 @@ const posts = [
     date: "July 14, 2026",
     topic: "Engineering",
     url: "./Blogs/silent-evolution-of-local-web-infrastructure.html",
-    wordCount: 180 // real count from the actual article body
+    wordCount: 214 // real count from the actual article body
   },
   {
     index: "02",
@@ -18,7 +18,7 @@ const posts = [
     date: "July 22, 2026",
     topic: "Real Estate",
     url: "./Blogs/why-upcoming-townships-in-bangalore-are-shaping-modern-urban-living.html",
-    wordCount: 620
+    wordCount: 221
   },
   {
     index: "03",
@@ -28,7 +28,7 @@ const posts = [
     date: "July 23, 2026",
     topic: "Real Estate",
     url: "./Blogs/how-to-choose-the-right-real-estate-builder-in-bangalore-for-long-term-value.html",
-    wordCount: 640
+    wordCount: 215
   },
   {
     index: "04",
@@ -38,7 +38,7 @@ const posts = [
     date: "July 22, 2026",
     topic: "Healthcare",
     url: "./Blogs/understanding-the-early-signs-of-endometriosis-symptoms-every-woman-should-know.html",
-    wordCount: 900
+    wordCount: 656
   },
   {
     index: "05",
@@ -48,7 +48,7 @@ const posts = [
     date: "July 30, 2026",
     topic: "Healthcare",
     url: "./Blogs/understanding-robotic-cataract-in-chennai-for-better-vision-care.html",
-    wordCount: 610
+    wordCount: 215
   }
 ];
 
