@@ -177,4 +177,4 @@ https://the-ledger-blogs.pages.dev/
 Paras
 
 GitHub:
-https://github.com/build-with-paras
+[GitHub](https://github.com/build-with-paras)
