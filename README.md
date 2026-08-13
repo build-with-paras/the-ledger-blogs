@@ -54,7 +54,7 @@ JavaScript for interactivity, with no framework overhead.
 
 ## Project Structure
 
-the-ledger-blogs/
+the-ledger-blogs/</br>
 ├── Blog Images/ # Featured images used in individual posts</br>
 ├── Blogs/ # Individual blog post pages</br>
 ├── JS/</br>
@@ -98,5 +98,5 @@ npx serve .
 
 ## Author
 
-**Paras**
-[GitHub](https://github.com/build-with-paras)
+**Paras**</br>
+GitHub Profile - [https://github.com/build-with-paras](https://github.com/build-with-paras)
